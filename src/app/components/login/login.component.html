@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<div class="container-login">
+    <div class="card">
+        <h2>BurgerQueen</h2>
+        <div class="card-body p-4">
+            <label style="float: left;">Email</label>
+            <input class="form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
+
+            <label style="float: left;">Contraseña</label>
+            <input class="form-control m-2" placeholder="ingrese su contraseña" [(ngModel)]="usuario.password">
+
+            <button class="btn btn-primary btn-block m-2" (click)="Ingresar()"> Ingresar </button>
+        </div>
+    </div>
+</div>  

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   }
-  constructor(private authService:AuthService) { }
+  constructor(
+    private authService:AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -21,14 +25,16 @@ export class LoginComponent implements OnInit {
       this.authService.login(email,password)
       .then(res => {
         if (res !== null){
-          console.log("usuario logeado", res.user);
+          console.log("Has iniciado sesión correctamente", res.user);
           if(email === 'mesero@bq.pe'){
             console.log('vista de mesero')
+            this.router.navigateByUrl('viewserver/statusorder');
           } else {
-            console.log('vista de chef')
+            console.log('vista de chef');
+            this.router.navigateByUrl('viewchef');
           }
         } else {
-          console.log("no existe el usuario");
+          console.log("Inicio de sesión fallido");
         }
       })
 

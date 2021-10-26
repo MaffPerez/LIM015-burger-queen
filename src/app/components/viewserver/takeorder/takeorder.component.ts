@@ -8,7 +8,9 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class TakeorderComponent implements OnInit {
   allProducts:any[]  = [];
-  product:any[] = [];
+  menu:any[] = [];
+  order: any[] = [];
+  base: number = 1;
 
   constructor( private firestoreService: FirestoreService ) { }
 
@@ -27,8 +29,22 @@ export class TakeorderComponent implements OnInit {
     })
   }
 
-  filteredProduct($event:any){
-    this.product = this.allProducts.filter((item) => item.data.turno == $event.target.value)
-    console.log(this.product)
+  filteredMenu($event:any){
+    this.menu = this.allProducts.filter((item) => item.data.turno == $event.target.value)
+    // console.log(this.menu)
   }
+
+  addOrder(id:any, data:Object){
+    this.order.push({
+      id,
+      data,
+      amount: 1
+    })
+    console.log(this.order)
+  }
+
+  changeAmount(base:number, item:any){
+    item.amount += base
+  }
+
 }

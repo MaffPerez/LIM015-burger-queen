@@ -56,12 +56,12 @@
         <tbody>
           <tr *ngFor="let item of order">
             <th scope="row align-items-center">
-                <p (click)="changeAmount(base,item)" class="col">+</p>
+                <button (click)="changeAmount(base,item)" class="col">+</button>
                 <p class="col">{{item.amount}}</p>
-                <p (click)="changeAmount(-base,item)" class="col">-</p>
+                <button (click)="changeAmount(-base,item)" class="col">-</button>
             </th>
             <td>{{item.data.nombre}}</td>
-            <td>{{item.data.precio}}</td>
+            <td>S/{{item.data.precio}}.00 </td>
             <td>
                 <button>
                     eliminar
@@ -71,12 +71,10 @@
         </tbody>
       </table>
 
-
-
-
     <div class="row">
         <div class="col-sm-12 text-center">
-            <button class="btn btn-danger btn-md">Enviar</button>
+            <button class="btn btn-primary btn-md">ENVIAR</button>
+            <button class="btn btn-danger btn-md" (click)="cancelOrder()">CANCELAR</button>
         </div>
     </div>
 </section>

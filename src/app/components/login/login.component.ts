@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           console.log("Has iniciado sesión correctamente", res.user);
           if(email === 'mesero@bq.pe'){
             console.log('vista de mesero')
-            this.router.navigateByUrl('viewserver/statusorder');
+            this.router.navigateByUrl('viewserver/takeorder');
           } else {
             console.log('vista de chef');
             this.router.navigateByUrl('viewchef');

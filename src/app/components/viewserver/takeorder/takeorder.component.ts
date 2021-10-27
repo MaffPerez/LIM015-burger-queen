@@ -11,7 +11,6 @@ export class TakeorderComponent implements OnInit {
   menu:any[] = [];
   order: any[] = [];
   base: number = 1;
-
   constructor( private firestoreService: FirestoreService ) { }
 
   ngOnInit(): void {
@@ -40,11 +39,30 @@ export class TakeorderComponent implements OnInit {
       data,
       amount: 1
     })
-    console.log(this.order)
   }
 
   changeAmount(base:number, item:any){
-    item.amount += base
+    // item.amount = item.amount +base
+    // console.log("amount",item.amount)
+    // console.log("base", item.amount + base)
+    if (item.amount === 1 && item.amount+base === 0){
+      this.deleteItem(item);
+    }else{
+      item.amount = item.amount + base
+    }
+  }
+
+  cancelOrder(){
+    this.order =  [];
+  }
+
+  deleteItem(item:any){
+    const index = this.order.indexOf(item);
+    if(index > 1){
+      this.order.splice(index,1);
+    }
+    console.log(this.order);
+    return this.order;
   }
 
 }

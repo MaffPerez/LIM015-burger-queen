@@ -1,4 +1,25 @@
+
 .card {
     flex-direction: row;
     align-items: center;
+}
+.bdcontainer {
+    // display:flex;
+    // justify-content: center;
+    // align-items: center;
+    width: 100vw;
+    height: 100vh;
+    border: 30px dashed #D0302A;
+}
+
+.color-card {
+    background-color: #D0302A;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+}
+.border-app {
+    border: 8px solid #D0302A;
+    border-radius: 10px;
+    height: 95vh;
 }

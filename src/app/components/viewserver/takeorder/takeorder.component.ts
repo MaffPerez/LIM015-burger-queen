@@ -45,7 +45,7 @@ export class TakeorderComponent implements OnInit {
     // item.amount = item.amount +base
     // console.log("amount",item.amount)
     // console.log("base", item.amount + base)
-    if (item.amount === 1 && item.amount+base === 0){
+    if (item.amount && item.amount+base === 0){
       this.deleteItem(item);
     }else{
       item.amount = item.amount + base
@@ -58,7 +58,7 @@ export class TakeorderComponent implements OnInit {
 
   deleteItem(item:any){
     const index = this.order.indexOf(item);
-    if(index > 1){
+    if(index > -1){
       this.order.splice(index,1);
     }
     console.log(this.order);

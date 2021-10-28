@@ -11,6 +11,8 @@ export class TakeorderComponent implements OnInit {
   menu:any[] = [];
   order: any[] = [];
   base: number = 1;
+  total: number = 0;
+
   constructor( private firestoreService: FirestoreService ) { }
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class TakeorderComponent implements OnInit {
       data,
       amount: 1
     })
+    this.totalPrice()
   }
 
   changeAmount(base:number, item:any){
@@ -49,20 +52,33 @@ export class TakeorderComponent implements OnInit {
       this.deleteItem(item);
     }else{
       item.amount = item.amount + base
+      this.totalPrice();
     }
   }
 
   cancelOrder(){
     this.order =  [];
+    this.totalPrice();
   }
 
   deleteItem(item:any){
     const index = this.order.indexOf(item);
     if(index > -1){
       this.order.splice(index,1);
+      this.totalPrice();
     }
-    console.log(this.order);
+    // console.log(this.order);
     return this.order;
   }
 
+  totalPrice() {
+    if(this.order.length === 0){
+      this.total = 0;
+    }else {
+      this.total = this.order.map((item)=>item.data.precio*item.amount)
+      .reduce((acc,item) => acc += item)
+      // console.log(this.total);
+    }
+
+  }
 }

@@ -1,0 +1,84 @@
+
+<app-navbar></app-navbar>
+<div class="p-3">
+            <div class="card color-card">
+            <div class="card-body">
+            SELECCION DEL MENU
+            </div>
+            <div>
+                <select id="product" name="product" (change)="filteredMenu($event)" >
+                    <option disabled selected>Turno</option>
+                    <option value="dia">Dia</option>
+                    <option value="tarde">Tarde</option>
+                </select>
+            </div>
+            </div>
+    
+            <section class="container-fluid product">
+                <div class="row p-1">
+                    <div class="col-md-3 p-1"  *ngFor="let product of menu">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <p class="card-text">{{product.data.nombre}}</p>
+                                <p class="card-text">S/{{product.data.precio}}</p>
+                                <button class="btn btn-danger btn-md" (click)="addOrder(product.id, product.data)">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section >
+            <div class="card color-card">
+                <div class="card-body">
+                    DETALLE DE LA ORDEN
+                    </div>
+                    <div>
+                        <label>Cliente</label>
+                        <input #client type="text" >
+                    </div>
+                </div>
+    
+            <table class="table table-hover text-center">
+                <thead>
+                <tr>
+                    <th scope="col">CANT.</th>
+                    <th scope="col">ITEM</th>
+                    <th scope="col">PRECIO</th>
+                    <th scope="col">ElIMINAR</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of order">
+                    <th scope="row align-items-center" class="items">
+                        <button (click)="changeAmount(base,item)" class=" btn-success col">+</button>
+                        <p class="col">{{item.amount}}</p>
+                        <button (click)="changeAmount(-base,item)" class="btn-danger col">-</button>
+                    </th>
+                    <td>{{item.data.nombre}}</td>
+                    <td>S/{{item.data.precio}}.00 </td>
+                    <td>
+                        <i  (click)="deleteItem(item)" class="fas fa-trash"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">PRECIO TOTAL:</th>
+                        <th scope="col">S/{{total}}.00</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <div class="row">
+                <div class="cont-btn col-sm-12 text-center">
+                    <button class="btn btn-danger btn-md" (click)="createOrder(client.value)">ENVIAR</button>
+                    <button class="btn btn-warning btn-md" (click)="cancelOrder()">CANCELAR</button>
+                </div>
+            </div>
+            </section>
+</div>
+
+

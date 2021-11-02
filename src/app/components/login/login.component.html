@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+    <div class="row align-items-center">
+
+        <!-- Registeration Form -->
+        <div class="col-md-10 col-lg-10 m-auto">
+            <h1 class="title py-50">Burger
+                Queen
+            </h1>
+            <form>
+                <div class="row">
+                    <!-- Email Address -->
+                    <div class="input-group col-lg-10 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="email" type="email" name="email" placeholder="Correo electrónico" class="form-control bg-white border-left-0 border-md" [(ngModel)]="usuario.email">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-group col-lg-10 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="password" type="password" name="password" placeholder="Contraseña" class="form-control bg-white border-left-0 border-md" [(ngModel)]="usuario.password">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group col-lg-10  mb-4">
+                        <button class="btn btn-danger btn-block py-2" (click)="Ingresar()"> Ingresar </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

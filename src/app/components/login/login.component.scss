@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:wght@700&display=swap');
+.container-fluid {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    border: 30px dashed #dc3545;
+}
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 150px;
+    padding: 50px;
+    color: #dc3545;
+}

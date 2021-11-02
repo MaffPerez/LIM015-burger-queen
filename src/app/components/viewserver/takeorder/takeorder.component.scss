@@ -27,3 +27,16 @@
 .items {
     display:flex;
 }
+
+.cont-btn {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.btn-send{
+    background-color: #ECCB6C;
+    color: black;
+    width: 120px;
+    font-family: 'Roboto Condensed', sans-serif;
+}

@@ -51,9 +51,9 @@
                 <tbody>
                 <tr *ngFor="let item of order">
                     <th scope="row align-items-center" class="items">
-                        <button (click)="changeAmount(base,item)" class="col">+</button>
+                        <button (click)="changeAmount(base,item)" class=" btn-success col">+</button>
                         <p class="col">{{item.amount}}</p>
-                        <button (click)="changeAmount(-base,item)" class="col">-</button>
+                        <button (click)="changeAmount(-base,item)" class="btn-danger col">-</button>
                     </th>
                     <td>{{item.data.nombre}}</td>
                     <td>S/{{item.data.precio}}.00 </td>
@@ -73,9 +73,9 @@
             </table>
 
             <div class="row">
-                <div class="col-sm-12 text-center">
-                    <button class="btn btn-primary btn-md" (click)="createOrder(client.value)">ENVIAR</button>
-                    <button class="btn btn-danger btn-md" (click)="cancelOrder()">CANCELAR</button>
+                <div class="cont-btn col-sm-12 text-center">
+                    <button class="btn btn-danger btn-md" (click)="createOrder(client.value)">ENVIAR</button>
+                    <button class="btn btn-warning btn-md" (click)="cancelOrder()">CANCELAR</button>
                 </div>
             </div>
             </section>

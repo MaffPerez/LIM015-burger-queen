@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-takeorder',
@@ -13,7 +14,7 @@ export class TakeorderComponent implements OnInit {
   base: number = 1;
   total: number = 0;
 
-  constructor( private firestoreService: FirestoreService ) { }
+  constructor( private firestoreService: FirestoreService, private router: Router ) { }
 
   ngOnInit(): void {
     this.getProducts()
@@ -79,6 +80,15 @@ export class TakeorderComponent implements OnInit {
       .reduce((acc,item) => acc += item)
       // console.log(this.total);
     }
+  }
 
+  createOrder(client: string){
+    if(client.length === 0){
+      alert("Por favor coloque el nombre");
+    } else {
+      this.firestoreService.createOrder(this.order, this.total, client);
+      alert("Orden realizada con éxito");
+      this.router.navigateByUrl('viewserver/statusorder');
+    }
   }
 }

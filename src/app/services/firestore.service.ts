@@ -13,4 +13,13 @@ export class FirestoreService {
   getProducts() {
     return this.affirestore.collection('Productos').snapshotChanges();
   }
+
+  createOrder(order:any[], total:number, client:string){
+    return this.affirestore.collection('orders').add({
+      order,
+      total,
+      client
+    })
+  }
+
 }

@@ -6,7 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth'
 })
 export class AuthService {
 
-  constructor(private afauth:AngularFireAuth) { }
+  constructor(public afauth:AngularFireAuth) { }
 
   async login(email:string, password:string){
     try{
@@ -16,6 +16,5 @@ export class AuthService {
       return null;
     }
   }
-
 
 }

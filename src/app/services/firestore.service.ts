@@ -18,8 +18,13 @@ export class FirestoreService {
     return this.affirestore.collection('orders').add({
       order,
       total,
-      client
+      client,
+      hour: new Date(),
     })
+  }
+
+  getOrder() {
+    return this.affirestore.collection('orders').snapshotChanges();
   }
 
 }

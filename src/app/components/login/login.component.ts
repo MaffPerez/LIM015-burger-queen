@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     password: ''
   }
   constructor(
-    private authService:AuthService,
+    public authService:AuthService,
     private router: Router
     ) { }
 
@@ -29,8 +29,7 @@ export class LoginComponent implements OnInit {
           if(email === 'mesero@bq.pe'){
             console.log('vista de mesero')
             this.router.navigateByUrl('viewserver/take-order');
-          } else if (email === 'jefedecocina@bq.pe'){
-            alert('Bienvenido chef!')
+          } else {
             console.log('vista de chef');
             this.router.navigateByUrl('viewchef/pending-order');
           }

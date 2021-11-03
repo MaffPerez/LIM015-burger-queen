@@ -14,7 +14,7 @@ export class TakeorderComponent implements OnInit {
   base: number = 1;
   total: number = 0;
 
-  constructor( private firestoreService: FirestoreService, private router: Router ) { }
+  constructor( public firestoreService: FirestoreService, private router: Router ) { }
 
   ngOnInit(): void {
     this.getProducts()
@@ -88,7 +88,7 @@ export class TakeorderComponent implements OnInit {
     } else {
       this.firestoreService.createOrder(this.order, this.total, client);
       alert("Orden realizada con éxito");
-      this.router.navigateByUrl('viewserver/statusorder');
+      this.router.navigateByUrl('viewserver/status-order');
     }
   }
 }

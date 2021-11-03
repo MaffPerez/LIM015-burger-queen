@@ -28,10 +28,11 @@ export class LoginComponent implements OnInit {
           console.log("Has iniciado sesión correctamente", res.user);
           if(email === 'mesero@bq.pe'){
             console.log('vista de mesero')
-            this.router.navigateByUrl('viewserver/takeorder');
-          } else {
+            this.router.navigateByUrl('viewserver/take-order');
+          } else if (email === 'jefedecocina@bq.pe'){
+            alert('Bienvenido chef!')
             console.log('vista de chef');
-            this.router.navigateByUrl('viewchef');
+            this.router.navigateByUrl('viewchef/pending-order');
           }
         } else {
           console.log("Inicio de sesión fallido");

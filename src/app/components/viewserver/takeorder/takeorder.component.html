@@ -20,7 +20,7 @@
                         <div class="card text-center">
                             <div class="card-body">
                                 <p class="card-text">{{product.data.nombre}}</p>
-                                <p class="card-text">S/{{product.data.precio}}</p>
+                                <p class="card-text">S/{{product.data.precio}}.00</p>
                                 <button class="btn btn-danger btn-md" (click)="addOrder(product.id, product.data)">Añadir</button>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                     </div>
                     <div>
                         <label>Cliente</label>
-                        <input #client type="text" >
+                        <input  class="input-client" #client type="text" >
                     </div>
                 </div>
     

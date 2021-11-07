@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     password: ''
   }
   constructor(
-    private authService:AuthService,
+    public authService:AuthService,
     private router: Router
     ) { }
 
@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
           console.log("Has iniciado sesión correctamente", res.user);
           if(email === 'mesero@bq.pe'){
             console.log('vista de mesero')
-            this.router.navigateByUrl('viewserver/takeorder');
+            this.router.navigateByUrl('viewserver/take-order');
           } else {
             console.log('vista de chef');
-            this.router.navigateByUrl('viewchef');
+            this.router.navigateByUrl('viewchef/pending-order');
           }
         } else {
           console.log("Inicio de sesión fallido");

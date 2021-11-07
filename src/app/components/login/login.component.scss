@@ -5,11 +5,40 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    border: 30px dashed #dc3545;
+    background-color:#ECCB6C;
+
 }
 .title {
     font-family: 'Pacifico', cursive;
-    font-size: 150px;
+    font-size: 100px;
     padding: 50px;
     color: #dc3545;
+    line-height: 100px;
+    // background-color:#ECCB6C;
+}
+
+.cont-log {
+
+    justify-content: center;
+
+}
+
+.container-login{
+    display: flex;
+    background-color: white;
+    padding: 30px 0 30px 0;
+    margin: 0;
+    width: 40%;
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
+    border: 12px dashed #dc3545;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (min-width:768px){
+    .container-login{
+        width: 80%;
+        height: 80%;
+    }
 }

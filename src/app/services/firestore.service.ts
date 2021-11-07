@@ -18,8 +18,17 @@ export class FirestoreService {
     return this.affirestore.collection('orders').add({
       order,
       total,
-      client
+      client,
+      status:"pendiente",
+      hour: new Date(),
     })
   }
 
+  getOrder() {
+    return this.affirestore.collection('orders').snapshotChanges();
+  }
+
+  updateStatus(id:string){
+    return this.affirestore.collection('orders').doc(id).update({status:"listo"})
+  }
 }

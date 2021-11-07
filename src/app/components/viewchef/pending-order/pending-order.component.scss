@@ -22,3 +22,32 @@ border: 3px solid;
     align-items: stretch;
     align-content: center;
 }
+
+.container-fluid {
+    display:grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: stretch;
+}
+.cont-card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #dc3545;
+    padding:10px;
+    border-radius:10px;
+}
+
+
+
+@media only screen and (max-width:768px){
+    .container-fluid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .container-fluid{
+        grid-template-columns:1fr;
+    }
+}

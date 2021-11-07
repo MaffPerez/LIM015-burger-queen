@@ -7,7 +7,7 @@
               <p class="card-text">Cliente: {{item.data.client}}</p>
               <p class="card-text">Fecha: {{item.data.hour.toDate()| date:'dd/MM/yyyy'}}</p>
               <p class="card-text">Hora inicial: {{item.data.hour.toDate()| date:'HH:mm:ss a'}}</p>
-              <p class="card-text">Estado del pedido: {{item.data.status}}</p>
+              
             </div>
           <div class="card-body text-danger text-center p-1">
             <table class="table">
@@ -34,6 +34,7 @@
               </tbody>
             </table>
           </div>
+          <p class="card-text text-center">Pedido: {{item.data.status}}</p>
         </div>
       </div>
 </main>

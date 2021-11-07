@@ -75,7 +75,10 @@ rápidamente a los clientes que las hicieron.
 Usuario mesero: mesero@bq.pe
 contraseña: mesero123
 ![login](/src/assets/vm-1.png)
-![login](/src/assets/vm-2.png)
-![login](/src/assets/vm-3.png)
+![take order](/src/assets/vm-2.png)
+![status order](/src/assets/vm-3.png)
+
 Usuario chef: jefedecocina@bq.pe
 contraseña: jefedecocina123
+![take order](/src/assets/c-1.png)
+![status order](/src/assets/c-2.png)

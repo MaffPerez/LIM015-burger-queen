@@ -1,44 +1,41 @@
 <app-navbar-chef></app-navbar-chef>
 
 <main class="container-fluid p-4">
-  <div class="row mb-3 justify-content-around">
+  <div  class="container-cards" *ngFor="let item of orders">
+    <h5 class="card-title text-center">R E S U M E N</h5>
+    <div class="card-background">
+        <p class="card-text">Cliente: {{item.data.client}}</p>
+        <p class="card-text">Fecha: {{item.data.hour.toDate()| date:'dd/MM/yyyy'}}</p>
+        <p class="card-text">Hora inicial: {{item.data.hour.toDate()| date:'HH:mm:ss a'}}</p>
+        <p class="card-text">Preparación: {{item.data.status}}</p>
+    </div>
 
-      <div *ngFor="let item of orders" class="col-8 card border-danger mb-10 p-3 card-border-radius" style="max-width: 20rem;">
-        <h5 class="card-title text-center">R E S U M E N</h5>
-        <div class="card border-danger mb-10 text-left p-4 card-background">
-            <p class="card-text">Cliente: {{item.data.client}}</p>
-            <p class="card-text">Fecha: {{item.data.hour.toDate()| date:'dd/MM/yyyy'}}</p>
-            <p class="card-text">Hora inicial: {{item.data.hour.toDate()| date:'HH:mm:ss a'}}</p>
-        </div>
-        <div class="card-body text-danger text-center p-1">
-          <table class="table">
+    <div class="container-table">
+      <table class="table text-center">
             <thead>
               <tr>
                 <th scope="col">CANT.</th>
                 <th scope="col">DETALLE</th>
-                <th scope="col">PRECIO</th>
+                <!-- <th scope="col">PRECIO</th> -->
               </tr>
             </thead>
-            <tbody *ngFor = "let order of item.data.order">
+            <tbody  class="text-center" *ngFor = "let order of item.data.order">
               <tr>
                 <th scope="row">{{order.amount}}</th>
                 <td>{{order.data.nombre}}</td>
-                <td>S/{{order.data.precio}}.00</td>
+                <!-- <td>S/{{order.data.precio}}.00</td> -->
               </tr>
             </tbody>
-            <tbody>
+            <!-- <tbody>
               <tr>
                 <th scope="row"></th>
                 <td>TOTAL:</td>
                 <td>S/{{item.data.total}}.00</td>
               </tr>
-            </tbody>
-          </table>
-          <button class="btn btn-danger btn-md" >FINALIZAR</button>
-        </div>
-      </div>
+            </tbody> -->
+        </table>
+        <button class="btn btn-danger btn-md" (click)="updateStatus(item.id)" >Pedido {{item.data.status}}!</button>
     </div>
 
-
-
+  </div>
 </main>

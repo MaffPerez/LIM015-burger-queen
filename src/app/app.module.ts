@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/viewserver/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { environment } from 'src/environments/environment'
 import { AngularFireModule } from '@angular/fire/compat';
@@ -32,6 +33,7 @@ import { NavbarChefComponent } from './components/viewchef/navbar-chef/navbar-ch
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    MatSlideToggleModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],

@@ -28,4 +28,8 @@ export class PendingOrderComponent implements OnInit {
     // Comprobar en la consola que lee las ordenes de firebase
     console.log(this.orders)
   }
+
+  updateStatus (id:string) {
+    this.firestoreService.updateStatus(id);
+   }
 }
